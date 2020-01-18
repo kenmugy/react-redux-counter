@@ -1,32 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { increment, decrement, reset } from './actions';
 import './app.css';
 
 function Counter(props) {
-  console.log(props);
-
-  const increment = () => {
-    props.dispatch({ type: 'INCREMENT' });
+  const increment1 = () => {
+    props.dispatch(increment());
   };
-  const decrement = () => {
-    props.dispatch({ type: 'DECREMENT' });
+  const decrement1 = () => {
+    props.dispatch(decrement());
   };
-  const reset = () => {
-    props.dispatch({ type: 'RESEt' });
+  const reset1 = () => {
+    props.dispatch(reset());
   };
 
   return (
     <div className='container'>
       <div className='counter'>
-        <button className='btn green' onClick={increment}>
+        <button className='btn green' onClick={increment1}>
           +
         </button>
         {props.count >= 0 ? <h1>{props.count}</h1> : <h1>{props.count}</h1>}
-        <button className='btn red' onClick={decrement}>
+        <button className='btn red' onClick={decrement1}>
           -
         </button>
       </div>
-      <button className='btn reset black' onClick={reset}>
+      <button className='btn reset black' onClick={reset1}>
         reset
       </button>
     </div>

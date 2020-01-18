@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
       return {
         count: state.count - 1
       };
-    case 'RESEt':
+    case 'RESET':
       return {
         count: 0
       };
