@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import './app.css';
 
-function Counter() {
-  const [counter, setCounter] = useState(0);
+function Counter(props) {
+  console.log(props);
 
   const increment = () => {
-    setCounter(counter + 1);
+    props.dispatch({ type: 'INCREMENT' });
   };
   const decrement = () => {
-    setCounter(counter - 1);
+    props.dispatch({ type: 'DECREMENT' });
   };
 
   return (
-    <div className='counter'>
+    <div className='container counter'>
       <button className='btn green' onClick={increment}>
         +
-      </button>{' '}
-      {counter >= 0 ? <h1>{counter}</h1> : <h1>{setCounter(0)}</h1>}
+      </button>
+      {props.count >= 0 ? <h1>{props.count}</h1> : <h1>{props.count}</h1>}
       <button className='btn red' onClick={decrement}>
         -
       </button>
@@ -23,4 +25,10 @@ function Counter() {
   );
 }
 
-export default Counter;
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  };
+}
+
+export default connect(mapStateToProps)(Counter);
