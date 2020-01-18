@@ -1,14 +1,18 @@
 .counter {
-    border: 1px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0px 20px 0px;
 }
 
-h1{
-    /* border: 2px solid blueviolet; */
-    padding: 10px;
-    margin: 0 5px;
+h1 {
+  /* border: 2px solid blueviolet; */
+  padding: 10px;
+  margin: 0 5px;
+}
 
+.reset {
+  display: block;
+  margin: 0 auto;
 }

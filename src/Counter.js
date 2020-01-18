@@ -11,15 +11,23 @@ function Counter(props) {
   const decrement = () => {
     props.dispatch({ type: 'DECREMENT' });
   };
+  const reset = () => {
+    props.dispatch({ type: 'RESEt' });
+  };
 
   return (
-    <div className='container counter'>
-      <button className='btn green' onClick={increment}>
-        +
-      </button>
-      {props.count >= 0 ? <h1>{props.count}</h1> : <h1>{props.count}</h1>}
-      <button className='btn red' onClick={decrement}>
-        -
+    <div className='container'>
+      <div className='counter'>
+        <button className='btn green' onClick={increment}>
+          +
+        </button>
+        {props.count >= 0 ? <h1>{props.count}</h1> : <h1>{props.count}</h1>}
+        <button className='btn red' onClick={decrement}>
+          -
+        </button>
+      </div>
+      <button className='btn reset black' onClick={reset}>
+        reset
       </button>
     </div>
   );
